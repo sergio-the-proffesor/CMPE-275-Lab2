@@ -16,8 +16,7 @@ public class PassengerService {
         this.PassengerRepository = PassengerRepository;
     }
 
-    // get all Planes
-    public Iterable<Passengers> getAllPlanes() {
+    public Iterable<Passengers> getAllPassngers() {
         Iterable<Passengers> Passengers = PassengerRepository.findAll();
         return Passengers;
     }
