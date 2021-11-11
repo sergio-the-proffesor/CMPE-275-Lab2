@@ -1,2 +1,47 @@
+package com.data.Connection_data.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.data.Connection_data.entities.connection;
+import com.data.Connection_data.repository.ConnectionData;
+
+@Controller
+public class PassengerController {
+	@Autowired
+	private PassengerData passengerData;
+
+	@RequestMapping("/dataView")
+	public String PassengerView() {
+		return "dataView";
+	}
+	
+	@RequestMapping("/saveData")
+	public String PassengerData(@ModelAttribute("connection") connection con, ModelMap modelmap) {
+		passengerData.save(con);
+		modelmap.addAttribute("sms", "Data Saved!!");
+		return "dataView";
+	}
+
+	@RequestMapping("/getConnection")
+	public String getConnection(ModelMap modelMap) {
+		List<connection> connections = conData.findAll();
+		modelMap.addAttribute("connections", connections);
+		return "getConnection";
+	}
+
+	@RequestMapping("/displayLocation")
+	public String displayLocations(ModelMap modelMap) {
+		List<connection> connections = conData.findAll();
+		modelMap.addAttribute("connections", connections);
+		return "getConnection";
+
+	}
+}
 
 
