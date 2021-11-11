@@ -22,23 +22,23 @@ public class PassengerController {
 	}
 	
 	@RequestMapping("/saveData")
-	public String PassengerData(@ModelAttribute("connection") connection con, ModelMap modelmap) {
+	public String PassengerData(@ModelAttribute("Passenger") Passenger Pass, ModelMap modelmap) {
 		passengerData.save(con);
 		modelmap.addAttribute("sms", "Data Saved!!");
 		return "dataView";
 	}
 
 	@RequestMapping("/getConnection")
-	public String getConnection(ModelMap modelMap) {
-		List<connection> connections = conData.findAll();
-		modelMap.addAttribute("connections", connections);
+	public String getPassengerConnection(ModelMap modelMap) {
+		List<connection> connections = passengerData.findAll();
+		modelMap.addAttribute("Passengers", Passenger);
 		return "getConnection";
 	}
 
 	@RequestMapping("/displayLocation")
-	public String displayLocations(ModelMap modelMap) {
-		List<connection> connections = conData.findAll();
-		modelMap.addAttribute("connections", connections);
+	public String displayPassengerLocations(ModelMap modelMap) {
+		List<connection> connections = passengerdata.findAll();
+		modelMap.addAttribute("Passengers", Passengers);
 		return "getConnection";
 
 	}
