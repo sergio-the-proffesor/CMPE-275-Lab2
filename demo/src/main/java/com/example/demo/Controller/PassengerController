@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.com.example.demo.Model.Passenger;
-import com.example.demo.Passengerrepository.passengerData;
+import com.example.demo.PassengerRepository.passengerData;
 
 @Controller
 public class PassengerController {
