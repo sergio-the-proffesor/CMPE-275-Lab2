@@ -8,8 +8,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.data.Connection_data.entities.connection;
-import com.data.Connection_data.repository.ConnectionData;
+import com.com.example.demo.Model.Passenger;
+import com.example.demo.Passengerrepository.passengerData;
 
 @Controller
 public class PassengerController {
@@ -30,15 +30,15 @@ public class PassengerController {
 
 	@RequestMapping("/getConnection")
 	public String getPassengerConnection(ModelMap modelMap) {
-		List<connection> connections = passengerData.findAll();
+		List<Passenger> Passengers = passengerData.findAll();
 		modelMap.addAttribute("Passengers", Passenger);
 		return "getConnection";
 	}
 
 	@RequestMapping("/displayLocation")
 	public String displayPassengerLocations(ModelMap modelMap) {
-		List<connection> connections = passengerdata.findAll();
-		modelMap.addAttribute("Passengers", Passengers);
+		List<Passenger> Passengers = passengerdata.findAll();
+		modelMap.addAttribute("Passenger", Passengers);
 		return "getConnection";
 
 	}
