@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class PassengerService {
-    final PlaneRepository PassengerRepository;
+    final PassengerRepository PassengerRepository;
 
     @Autowired
     public PassengerService(PassengerRepository PassengerRepository) {
